@@ -20,67 +20,33 @@
 \pdfbookmark[1]{Contents}{contents}
 %===============================================================
 
-% %=========================设=置=页=眉===========================
-% \usepackage{fancyhdr} %为了保证正确长度的页眉下划线,fancyhdr宏包要在geometry宏包后使用；
-% \pagestyle{fancy}
-% \fancyhf{}
-% \lhead{\includegraphics[scale=0.04]{./pictures/ICL_logo.png}}
-% \usepackage{lastpage}
-% \rhead{\small\heiti Reinforcement Learning Coursework(Report)}
-% %===============================================================
-
-% %==========================章节格式=============================
-% \usepackage{titlesec}
-% \usepackage{indentfirst}
-% \setlength{\parindent}{2em}
-% \titleformat{\section}[hang]{\heiti\Large}{Chapter\ \thesection \quad}{0pt}{}{}
-% \titleformat{\subsection}[hang]{\heiti\normalsize\raggedright}{\thesubsection\quad}{0pt}{}{}
-% \titleformat{\subsubsection}[hang]{\normalsize\kaishu\raggedright}{\thesubsubsection\quad}{0pt}{}{}
-% \titlespacing*{\section}{0pt}{0pt}{19.2pt}[0pt]
-% \titlespacing*{\subsection}{0pt}{0pt}{0pt}[0pt]
-% \titlespacing*{\subsubsection}{0pt}{0pt}{0pt}[0pt]
-% %===============================================================
-
 %=========================设=置=页=眉===========================
 \usepackage{fancyhdr} %为了保证正确长度的页眉下划线,fancyhdr宏包要在geometry宏包后使用；
-\pagestyle{fancy}  % Set page style to fancy
-\fancyhf{}  % Clear all header and footer fields
-\lhead{\includegraphics[scale=0.04]{./pictures/ICL_logo.png}}  % Set logo in the left header
-\rhead{\small\heiti Reinforcement Learning Coursework (Report)}  % Set custom right header text
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[scale=0.04]{./pictures/ICL_logo.png}}
+\usepackage{lastpage}
+\rhead{\small\englishbf Reinforcement Learning Coursework(Report)}
 %===============================================================
 
 %==========================章节格式=============================
 \usepackage{titlesec}
 \usepackage{indentfirst}
 \setlength{\parindent}{2em}
-\titleformat{\section}[hang]
-  {\englishbf\Large}  % Bold and large font for section title
-  {Chapter\ \thesection\quad}  % Add 'Chapter' before section number
-  {0pt}  % No space between number and title
-  {}  % No extra formatting
-\titlespacing*{\section}{0pt}{0pt}{19.2pt}[0pt]  % Adjust spacing around section title
-
-\titleformat{\subsection}[hang]
-  {\englishbf\normalsize\raggedright}  % Bold and normal font for subsection title
-  {\thesubsection\quad}  % Subsection number formatting
-  {0pt}  % No space between number and title
-  {}  % No extra formatting
-\titlespacing*{\subsection}{0pt}{0pt}{0pt}[0pt]  % Adjust spacing around subsection title
-
-\titleformat{\subsubsection}[hang]
-  {\itshape\normalsize\raggedright}  % Italic font for subsubsection title
-  {\thesubsubsection\quad}  % Subsubsection number formatting
-  {0pt}  % No space between number and title
-  {}  % No extra formatting
-\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}[0pt]  % Adjust spacing around subsubsection title
+\titleformat{\section}[hang]{\englishbf\Large}{Chapter\ \thesection \quad}{0pt}{}{}
+\titleformat{\subsection}[hang]{\englishbf\normalsize\raggedright}{\thesubsection\quad}{0pt}{}{}
+\titleformat{\subsubsection}[hang]{\normalsize\kaishu\raggedright}{\thesubsubsection\quad}{0pt}{}{}
+\titlespacing*{\section}{0pt}{0pt}{19.2pt}[0pt]
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}[0pt]
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}[0pt]
 %===============================================================
 
 %============================目录===============================
 \usepackage{titletoc}
-\titlecontents{section}[0mm]{}{}{}{}[]
-\dottedcontents{section}[0.0em]{\normalsize}{1.0em}{4pt}
-\dottedcontents{subsection}[3.0em]{\normalsize}{2.0em}{4pt}
-\dottedcontents{subsubsection}[6.0em]{\normalsize}{3.0em}{4pt}
+\titlecontents{section}[1.2em]{}{}{}{}[]  % 修改section的缩进
+\dottedcontents{section}[1.2em]{\normalsize}{1.0em}{4pt}  % 修改section的起始缩进
+\dottedcontents{subsection}[4.0em]{\normalsize}{2.0em}{4pt}
+\dottedcontents{subsubsection}[7.0em]{\normalsize}{3.0em}{4pt}
 %===============================================================
 
 %==========================脚注格式=============================
@@ -212,14 +178,14 @@
 \newpage
 
 \phantomsection %设置“幻影标题”，解决额外插入目录（\addcontentsline）后总是引用到第一页的问题；
-\addcontentsline{toc}{section}{Table of Contents}
+\addcontentsline{toc}{section}{Contents}
 \vspace*{-21.6pt}
 \tableofcontents
 \newpage
 
 \setcounter{page}{1}
 \pagenumbering{arabic}
-\cfoot{\small Page \thepage\ of \pageref{LastPage}}
+\cfoot{\small Page\, \thepage\,of\, \pageref{LastPage}}
 \input{body.tex}
 \newpage
 
@@ -229,7 +195,7 @@
 \bibliographystyle{dcu}  % 使用Harvard格式
 \bibliography{./reference/thesis}  % 指向bib文件
 
-\titleformat{\section}[hang]{\heiti\large}{Appendix\,\thesection \quad}{0pt}{}{}
+\titleformat{\section}[hang]{\englishbf\large}{Appendix\,\thesection \quad}{0pt}{}{}
 \input{appendix.tex}
 
 \end{document}
