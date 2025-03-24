@@ -2,6 +2,7 @@
 > Imperial College London LaTex Template
 
 > 搭配中文注释，更适合中国宝宝体质
+> 中文报告模板可参见[CSU LaTex模板](https://github.com/heyzbw/CSU_Thesis_Template)
 
 ## 使用指南
 - `main.tex`为主源文件，使用模板时编译此文件
@@ -32,6 +33,19 @@
 [label=\Roman*)] -> 大写罗马数字
 [label=\arabic*)] -> 数字
 [label=(\alph*)] -> 字母
+
+此外，常见调节参数如下：
+[
+    itemsep=0pt,      % 项间垂直间距
+    parsep=0pt,       % 段落内行间距
+    topsep=0pt,       % 列表与上文间距
+    partopsep=0pt,    % 单独段落时的额外间距
+    leftmargin=*,     % 自动左对齐
+    label=\arabic*.,  % 数字编号格式
+    font=\bfseries,   % 编号加粗
+    before=\vspace{-0.5\baselineskip}, % 列表前间距
+    after=\vspace{-\baselineskip}       % 列表后间距
+]
 更多信息可以参考enumitem包的文档：https://ctan.org/pkg/enumitem
 ~~~
 - 无编号分点

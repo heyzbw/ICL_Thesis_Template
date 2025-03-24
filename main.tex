@@ -1,12 +1,13 @@
 \documentclass[a4paper,12pt,UTF8,oneside,hyperref]{ctexart} %twoside可设置双面打印格式;
-\usepackage{times}%全文英文字体使用Times New Roman；
+% \usepackage{times}%全文英文字体使用Times New Roman；
 \usepackage[english]{babel} %设置英文单词的断行规则；
-\linespread{1.5}%全文1.5倍行距；
-\newfontface\englishbf{Times New Roman}[Contextuals={WordInitial,WordFinal}] %设置英文粗体方式；
+
+\linespread{1.25}%全文1.25倍行距；
 %========================电子文档与超链接======================
 \usepackage[backref=page,hyperfootnotes=false]{hyperref}
 \usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{graphicx}
+
 \hypersetup{
  bookmarks = true,
  bookmarksopen = true,
@@ -14,7 +15,7 @@
  hyperfootnotes=false,
  pdfpagemode = FullScreen,
  pdfstartview = Fit,
- pdftitle = {coursework1_report_CID},
+ pdftitle = {Title},
  pdfauthor = {Bowen Zhi}
 }
 \pdfbookmark[1]{Contents}{contents}
@@ -24,29 +25,30 @@
 \usepackage{fancyhdr} %为了保证正确长度的页眉下划线,fancyhdr宏包要在geometry宏包后使用；
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\includegraphics[scale=0.04]{./pictures/ICL_logo.png}}
+\lhead{\includegraphics[scale=0.03]{./pictures/ICL_logo.png}}
 \usepackage{lastpage}
-\rhead{\small\englishbf Reinforcement Learning Coursework(Report)}
+\rhead{\small\bfseries Title}
 %===============================================================
 
 %==========================章节格式=============================
 \usepackage{titlesec}
 \usepackage{indentfirst}
-\setlength{\parindent}{2em}
-\titleformat{\section}[hang]{\englishbf\Large}{Chapter\ \thesection \quad}{0pt}{}{}
-\titleformat{\subsection}[hang]{\englishbf\normalsize\raggedright}{\thesubsection\quad}{0pt}{}{}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5ex plus 0.1ex minus 0.1ex} % 段落间距
+\titleformat{\section}[hang]{\bfseries\Large}{Chapter\ \thesection \quad}{0pt}{}{}
+\titleformat{\subsection}[hang]{\bfseries\normalsize\raggedright}{\thesubsection\quad}{0pt}{}{}
 \titleformat{\subsubsection}[hang]{\normalsize\kaishu\raggedright}{\thesubsubsection\quad}{0pt}{}{}
-\titlespacing*{\section}{0pt}{0pt}{19.2pt}[0pt]
-\titlespacing*{\subsection}{0pt}{0pt}{0pt}[0pt]
-\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}[0pt]
+\titlespacing*{\section}{0pt}{0pt}{8pt}[0pt]
+\titlespacing*{\subsection}{0pt}{6pt}{4pt}[0pt]
+\titlespacing*{\subsubsection}{0pt}{6pt}{4pt}[0pt]
 %===============================================================
 
 %============================目录===============================
 \usepackage{titletoc}
 \titlecontents{section}[1.2em]{}{}{}{}[]  % 修改section的缩进
 \dottedcontents{section}[1.2em]{\normalsize}{1.0em}{4pt}  % 修改section的起始缩进
-\dottedcontents{subsection}[4.0em]{\normalsize}{2.0em}{4pt}
-\dottedcontents{subsubsection}[7.0em]{\normalsize}{3.0em}{4pt}
+\dottedcontents{subsection}[3.2em]{\normalsize}{2.0em}{4pt}
+\dottedcontents{subsubsection}[5.2em]{\normalsize}{3.0em}{4pt}
 %===============================================================
 
 %==========================脚注格式=============================
@@ -99,6 +101,8 @@
 \usepackage{color}
 \usepackage[table]{xcolor}
 \usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning, shapes.geometric, arrows}
 \definecolor{mygray}{gray}{.9}
 \definecolor{mypink}{rgb}{.99,.91,.95}
 \definecolor{mycyan}{cmyk}{.3,0,0,0}
@@ -116,6 +120,7 @@
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}%罗马数字
 \makeatother%罗马数字 \Rmnum{1} 或 \Rmnum{2} 或 \rmnum{3}
 \usepackage{xfrac}%行内小分式
+\setlength{\belowcaptionskip}{-10pt} %减少图表标题下方的行距
 %==================================================================
 
 %=============================文献格式===============================
@@ -167,8 +172,8 @@
 \input{cover.tex}
 \clearpage
 \phantom{s}
-%\thispagestyle{empty}
-%\newpage
+% \thispagestyle{empty}
+% \newpage
 
 \setcounter{page}{1}
 \pagenumbering{Roman}
@@ -177,7 +182,8 @@
 \input{abstract.tex}
 \newpage
 
-\phantomsection %设置“幻影标题”，解决额外插入目录（\addcontentsline）后总是引用到第一页的问题；
+\phantomsection 
+%设置“幻影标题”，解决额外插入目录（\addcontentsline）后总是引用到第一页的问题；
 \addcontentsline{toc}{section}{Contents}
 \vspace*{-21.6pt}
 \tableofcontents
@@ -195,7 +201,7 @@
 \bibliographystyle{dcu}  % 使用Harvard格式
 \bibliography{./reference/thesis}  % 指向bib文件
 
-\titleformat{\section}[hang]{\englishbf\large}{Appendix\,\thesection \quad}{0pt}{}{}
+\titleformat{\section}[hang]{\bfseries\large}{Appendix\,\thesection \quad}{0pt}{}{}
 \input{appendix.tex}
 
 \end{document}
