@@ -132,7 +132,7 @@ Command     Nominal Point Size      Exact Point Size
 模板还有很多不足之处待改进，欢迎大家在issue里提问。
 
 ## 致谢
-- 文件整体在[CSU LaTex模板](https://github.com/heyzbw/CSU_Thesis_Template)的基础上修改，做了相应的英文和风格适配。
+- 文件整体在[CSU LaTeX模板](https://github.com/heyzbw/CSU_Thesis_Template)的基础上修改，做了相应的英文和风格适配。
 
 - 参考文献格式文件`dcu.bst`来源于：[Harvard引用格式](https://ctan.org/tex-archive/macros/latex/contrib/harvard)
 
