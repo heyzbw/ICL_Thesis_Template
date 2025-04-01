@@ -7,8 +7,9 @@
 
 ## 使用指南
 - `main.tex`为主源文件
-- `title`中编辑论文封面
-- `appendix.tex`编辑论文附录
+- `title`中编辑封面内容
+- `appendix.tex`编辑附录
+- `body.tex`编辑正文
 - `reference.bib`文件为文献数据库，使用bibtex格式
 - 模板编译效果见<a href="main.pdf" target="_blank">main.pdf</a>
 
