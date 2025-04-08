@@ -5,7 +5,7 @@
 
 
 ## 使用指南
-- `Overleaf LaTeX Template`在 Overleaf 在线编译使用
+- 利用 Overleaf 的`Import from GitHuB`将子仓库`Overleaf_Template`直接导入在线编译使用
 - `Local LaTaX Template`在本地编译器直接编译使用
 
 
