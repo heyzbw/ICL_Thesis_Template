@@ -1,0 +1,3 @@
+[submodule "Overleaf_Template"]
+	path = Overleaf_Template
+	url = https://github.com/heyzbw/Overleaf-LaTeX-Template.git
